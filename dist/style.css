@@ -20,8 +20,6 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --leading-tight: 1.25;
@@ -33,6 +31,8 @@
     --color-ink: #34445C;
     --color-snow: #F8FAFC;
     --color-night: #1F2A3C;
+    --color-deep: #1E1347;
+    --color-royal: #5B3FD0;
   }
 }
 @layer base {
@@ -286,11 +286,14 @@
   .bg-brand {
     background-color: var(--color-brand);
   }
-  .bg-ink {
-    background-color: var(--color-ink);
+  .bg-deep {
+    background-color: var(--color-deep);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
+  }
+  .bg-royal {
+    background-color: var(--color-royal);
   }
   .bg-snow {
     background-color: var(--color-snow);
@@ -312,9 +315,6 @@
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
-  }
-  .p-8 {
-    padding: calc(var(--spacing) * 8);
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
@@ -340,10 +340,6 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
