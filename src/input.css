@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(:root:has(#theme-toggle:checked) *));
+@theme {
+    --font-sans: "Vazirmatn", sans-serif;
+    --color-brand: #8B7CF6;
+    --color-accent: #ffd84d;
+    --color-info: #42A5f5;
+    --color-ink: #34445C;
+    --color-snow: #F8FAFC;
+    --color-misit: #DDF2FF;
+    --color-night: #1F2A3C;
+}
