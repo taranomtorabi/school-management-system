@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>پنل اولیا</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <!-- دکمه‌ی دارک/لایت (بدون جاوااسکریپت) -->
+  <input type="checkbox" id="theme-toggle" class="hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- ===== سایدبار (سمت راست چون RTL) ===== -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+        <span class="text-2xl">🎓</span>
+        <span>مدیریت مدرسه</span>
+      </div>
+
+    </aside><nav class="mt-4 flex flex-col gap-1 text-sm">
+  <a href="#" class="rounded-xl bg-royal px-4 py-3 font-semibold">داشبورد</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">نمرات و کارنامه</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">وضعیت انضباطی</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">غیبت‌ها</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">پرداخت شهریه</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">جلسات اولیا و معلم</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">پیام به مدرسه</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تقویم رویدادها</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تنظیمات</a>
+</nav>
+
+    <!-- ===== بخش اصلی ===== -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- هدر -->
+      <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+
+        <!-- نوار جستجو (ظاهری) -->
+        <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در سامانه..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex items-center gap-4">
+
+          <!-- دکمه‌ی تم -->
+          <label for="theme-toggle" class="cursor-pointer text-xl" title="تغییر تم">🌓</label>
+
+          <!-- منوی اعلان‌ها -->
+          <details class="relative">
+            <summary class="list-none cursor-pointer text-xl relative">
+              🔔
+              <span class="absolute -top-2 -left-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">3</span>
+            </summary>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl bg-white dark:bg-ink p-3 text-sm shadow-lg z-10">
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">جلسه اولیا و مربیان فردا برگزار می‌شود</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">ثبت نمرات میان‌ترم الزامی است</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">پرداخت شهریه معوقه</p>
+            </div>
+          </details>
+
+          <!-- اطلاعات کاربر -->
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white font-bold">ع</div>
+            <div class="text-sm leading-tight">
+              <p class="font-semibold">نگین رحمانی</p>
+              <p class="text-xs opacity-70">ولی دانش آموز</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+    <main class="flex-1 p-6 space-y-6">
+
+  <h1 class="text-2xl font-bold">داشبورد اولیا</h1>
+
+  <!-- انتخاب فرزند (ظاهری) -->
+  <section class="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-white p-5 shadow-sm dark:bg-ink">
+    <div class="flex items-center gap-4">
+      <div class="flex h-16 w-16 items-center justify-center rounded-full bg-lilac text-3xl dark:bg-night">👦</div>
+      <div>
+        <p class="text-sm opacity-70">فرزند شما</p>
+        <p class="text-lg font-bold">امیر محمدی</p>
+        <p class="text-xs opacity-70">پایه‌ی هفتم، کلاس الف</p>
+      </div>
+    </div>
+    <label class="text-sm">
+      انتخاب فرزند
+      <select class="mt-1 block rounded-xl bg-lilac p-2 dark:bg-night">
+        <option>امیر محمدی</option>
+        <option>ملیکا محمدی</option>
+      </select>
+    </label>
+  </section>
+
+  <!-- کارت‌های وضعیت -->
+  <section class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <div class="rounded-2xl bg-lilac p-5 dark:bg-ink">
+      <p class="text-sm opacity-70">معدل فرزند</p>
+      <p class="mt-2 text-3xl font-bold">۱۹٫۵۰</p>
+    </div>
+    <div class="rounded-2xl bg-green-100 p-5 dark:bg-ink">
+      <p class="text-sm opacity-70">وضعیت انضباطی</p>
+      <p class="mt-2 text-3xl font-bold text-green-700">عالی</p>
+    </div>
+    <div class="rounded-2xl bg-accent/30 p-5 dark:bg-ink">
+      <p class="text-sm opacity-70">غیبت این ماه</p>
+      <p class="mt-2 text-3xl font-bold">۱ روز</p>
+    </div>
+  </section>
+
+  <div class="grid gap-6 lg:grid-cols-2">
+
+    <!-- نمرات اخیر -->
+    <section class="rounded-2xl bg-white p-5 shadow-sm dark:bg-ink">
+      <h2 class="mb-4 font-semibold">نمرات اخیر</h2>
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-right opacity-70">
+            <th class="py-2">درس</th>
+            <th class="py-2">نمره</th>
+            <th class="py-2">وضعیت</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">ریاضی</td>
+            <td>۱۹٫۵</td>
+            <td><span class="rounded-full bg-green-100 px-3 py-1 text-xs text-green-700">عالی</span></td>
+          </tr>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">فارسی</td>
+            <td>۱۸٫۲۵</td>
+            <td><span class="rounded-full bg-green-100 px-3 py-1 text-xs text-green-700">عالی</span></td>
+          </tr>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">علوم</td>
+            <td>۱۷</td>
+            <td><span class="rounded-full bg-info/25 px-3 py-1 text-xs">خوب</span></td>
+          </tr>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">زبان</td>
+            <td>۱۶٫۵</td>
+            <td><span class="rounded-full bg-info/25 px-3 py-1 text-xs">خوب</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- پرداخت شهریه -->
+    <section class="rounded-2xl bg-white p-5 shadow-sm dark:bg-ink">
+      <h2 class="mb-4 font-semibold">پرداخت شهریه</h2>
+      <p class="text-sm opacity-70">مبلغ قابل پرداخت</p>
+      <p class="mt-2 text-3xl font-bold">۲٬۵۰۰٬۰۰۰ تومان</p>
+      <p class="mt-1 text-xs opacity-70">سررسید: ۱۴۰۴/۰۹/۱۵</p>
+      <button type="button" class="mt-6 w-full rounded-xl bg-royal py-3 text-white">پرداخت آنلاین</button>
+    </section>
+  </div>
+
+</main>
+      <!-- ===== پایان محتوا ===== -->
+
+    </div>
+  </div>
+
+</body>
+</html>
