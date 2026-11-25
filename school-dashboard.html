@@ -74,7 +74,9 @@
         </div>
       </header>
 
+     
       <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+
 <main class="flex-1 p-6 space-y-6">
 
   <h1 class="text-2xl font-bold">داشبورد مدرسه</h1>
@@ -102,6 +104,8 @@
   <div class="grid gap-6 lg:grid-cols-3">
 
     <!-- نمودار میله‌ای CSS -->
+
+
     <section class="rounded-2xl bg-white p-5 shadow-sm dark:bg-ink lg:col-span-2">
       <h2 class="mb-4 font-semibold">نمودار آمار تحصیلی (میانگین ماهانه)</h2>
       <div class="flex h-48 items-stretch justify-around gap-3">
@@ -128,6 +132,55 @@
       <p class="mt-4 text-center text-sm">۲۹۵ حاضر، ۲۵ غایب</p>
     </section>
   </div>
+  <!-- هشدار: دانش‌آموزان در خطر افت تحصیلی -->
+  <section class="rounded-2xl border border-red-200 bg-red-50 p-5 dark:border-red-400/30 dark:bg-ink">
+    <div class="mb-4 flex items-center justify-between">
+      <h2 class="flex items-center gap-2 font-semibold text-red-600">
+        <span>⚠️</span>
+        <span>دانش‌آموزان در خطر افت تحصیلی</span>
+      </h2>
+      <span class="rounded-full bg-red-500 px-3 py-1 text-xs text-white">۴ نفر</span>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-right opacity-70">
+            <th class="py-2">نام دانش‌آموز</th>
+            <th class="py-2">کلاس</th>
+            <th class="py-2">معدل</th>
+            <th class="py-2">وضعیت</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-red-200 dark:border-white/10">
+            <td class="py-3">امیرحسین کریمی</td>
+            <td>هفتم الف</td>
+            <td class="font-semibold text-red-600">۹.۵</td>
+            <td><span class="rounded-full bg-red-100 px-3 py-1 text-xs text-red-700">خطر بالا</span></td>
+          </tr>
+          <tr class="border-t border-red-200 dark:border-white/10">
+            <td class="py-3">مهسا احمدی</td>
+            <td>هشتم ب</td>
+            <td class="font-semibold text-red-600">۱۰.۸</td>
+            <td><span class="rounded-full bg-red-100 px-3 py-1 text-xs text-red-700">خطر بالا</span></td>
+          </tr>
+          <tr class="border-t border-red-200 dark:border-white/10">
+            <td class="py-3">پارسا نوری</td>
+            <td>نهم الف</td>
+            <td class="font-semibold text-orange-600">۱۱.۹</td>
+            <td><span class="rounded-full bg-accent/50 px-3 py-1 text-xs text-ink">نیاز به توجه</span></td>
+          </tr>
+          <tr class="border-t border-red-200 dark:border-white/10">
+            <td class="py-3">دیبا صادقی</td>
+            <td>هفتم ب</td>
+            <td class="font-semibold text-orange-600">۱۲.۲</td>
+            <td><span class="rounded-full bg-accent/50 px-3 py-1 text-xs text-ink">نیاز به توجه</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
 </main>
         
