@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سامانه مدیریت مدرسه</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <!-- دکمه‌ی دارک/لایت (بدون جاوااسکریپت) -->
+  <input type="checkbox" id="theme-toggle" class="hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- ===== سایدبار (سمت راست چون RTL) ===== -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+        <span class="text-2xl">🎓</span>
+        <span>مدیریت مدرسه</span>
+      </div>
+
+      <nav class="mt-4 flex flex-col gap-1 text-sm">
+        <a href="#" class="rounded-xl bg-royal px-4 py-3 font-semibold">داشبورد</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">ثبت نمرات</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">دانش‌آموزان</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">معلمان</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">کلاس‌ها</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">امور مالی</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">اعلان‌ها</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تنظیمات</a>
+      </nav>
+    </aside>
+
+    <!-- ===== بخش اصلی ===== -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- هدر -->
+      <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+
+        <!-- نوار جستجو (ظاهری) -->
+        <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در سامانه..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex items-center gap-4">
+
+          <!-- دکمه‌ی تم -->
+          <label for="theme-toggle" class="cursor-pointer text-xl" title="تغییر تم">🌓</label>
+
+          <!-- منوی اعلان‌ها -->
+          <details class="relative">
+            <summary class="list-none cursor-pointer text-xl relative">
+              🔔
+              <span class="absolute -top-2 -left-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">3</span>
+            </summary>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl bg-white dark:bg-ink p-3 text-sm shadow-lg z-10">
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">جلسه اولیا و مربیان فردا برگزار می‌شود</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">ثبت نمرات میان‌ترم الزامی است</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">پرداخت شهریه معوقه</p>
+            </div>
+          </details>
+
+          <!-- اطلاعات کاربر -->
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white font-bold">ع</div>
+            <div class="text-sm leading-tight">
+              <p class="font-semibold">رعنا اکبری</p>
+              <p class="text-xs opacity-70">مدیر مدرسه</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+      <main class="flex-1 p-6">
+        <h1 class="text-2xl font-bold text-brand">مدیریت کلاس ها</h1>
+     <div class="bg-white rounded-2xl shadow-sm p-6 mt-6">
+
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-xl font-bold text-ink">فهرست کلاس‌ها</h2>
+    <button class="bg-brand text-white px-4 py-2 rounded-xl">
+      + افزودن کلاس
+    </button>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-right">
+      <thead class="bg-lilac text-ink">
+        <tr>
+          <th class="p-3">نام کلاس</th>
+          <th class="p-3">پایه تحصیلی</th>
+          <th class="p-3">نام معلم</th>
+          <th class="p-3">ظرفیت</th>
+          <th class="p-3">تعداد دانش‌آموز</th>
+          <th class="p-3">وضعیت</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="border-b">
+          <td class="p-3">کلاس اول الف</td>
+          <td class="p-3">اول</td>
+          <td class="p-3">مریم احمدی</td>
+          <td class="p-3">۳۰ نفر</td>
+          <td class="p-3">۲۵ نفر</td>
+          <td class="p-3 text-green-600">فعال</td>
+        </tr>
+
+        <tr class="border-b">
+          <td class="p-3">کلاس دوم ب</td>
+          <td class="p-3">دوم</td>
+          <td class="p-3">زهرا محمدی</td>
+          <td class="p-3">۳۰ نفر</td>
+          <td class="p-3">۲۸ نفر</td>
+          <td class="p-3 text-green-600">فعال</td>
+        </tr>
+
+        <tr class="border-b">
+          <td class="p-3">کلاس سوم الف</td>
+          <td class="p-3">سوم</td>
+          <td class="p-3">فاطمه رضایی</td>
+          <td class="p-3">۲۵ نفر</td>
+          <td class="p-3">۲۵ نفر</td>
+          <td class="p-3 text-orange-500">تکمیل ظرفیت</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+      </main>
+      <!-- ===== پایان محتوا ===== -->
+
+    </div>
+  </div
+
+</body>
+</html>

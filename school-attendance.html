@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سامانه مدیریت مدرسه</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <!-- دکمه‌ی دارک/لایت (بدون جاوااسکریپت) -->
+  <input type="checkbox" id="theme-toggle" class="hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- ===== سایدبار (سمت راست چون RTL) ===== -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+        <span class="text-2xl">🎓</span>
+        <span>مدیریت مدرسه</span>
+      </div>
+
+      <nav class="mt-4 flex flex-col gap-1 text-sm">
+        <a href="#" class="rounded-xl bg-royal px-4 py-3 font-semibold">داشبورد</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">ثبت نمرات</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">دانش‌آموزان</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">معلمان</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">کلاس‌ها</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">امور مالی</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">اعلان‌ها</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تنظیمات</a>
+      </nav>
+    </aside>
+
+    <!-- ===== بخش اصلی ===== -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- هدر -->
+      <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+
+        <!-- نوار جستجو (ظاهری) -->
+        <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در سامانه..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex items-center gap-4">
+
+          <!-- دکمه‌ی تم -->
+          <label for="theme-toggle" class="cursor-pointer text-xl" title="تغییر تم">🌓</label>
+
+          <!-- منوی اعلان‌ها -->
+          <details class="relative">
+            <summary class="list-none cursor-pointer text-xl relative">
+              🔔
+              <span class="absolute -top-2 -left-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">3</span>
+            </summary>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl bg-white dark:bg-ink p-3 text-sm shadow-lg z-10">
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">جلسه اولیا و مربیان فردا برگزار می‌شود</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">ثبت نمرات میان‌ترم الزامی است</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">پرداخت شهریه معوقه</p>
+            </div>
+          </details>
+
+          <!-- اطلاعات کاربر -->
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white font-bold">ع</div>
+            <div class="text-sm leading-tight">
+              <p class="font-semibold">رعنا اکبری</p>
+              <p class="text-xs opacity-70">مدیر مدرسه</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+      <main class="flex-1 p-6">
+     <h1 class="text-2xl font-bold text-brand">حضور و غیاب دانش‌آموزان</h1>
+     <div class="bg-white rounded-2xl shadow-sm p-6 mt-6">
+
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-xl font-bold text-ink">جدول حضور و غیاب دانش‌آموزان</h2>
+    <span class="bg-lilac text-brand px-4 py-2 rounded-xl">
+      آبان ۱۴۰۵
+    </span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+
+    <div class="bg-snow rounded-xl p-4">
+      <p class="text-ink">کل دانش‌آموزان</p>
+      <p class="text-2xl font-bold text-brand mt-2">۸۰ نفر</p>
+    </div>
+
+    <div class="bg-snow rounded-xl p-4">
+      <p class="text-ink">حاضرین</p>
+      <p class="text-2xl font-bold text-green-600 mt-2">۷۴ نفر</p>
+    </div>
+
+    <div class="bg-snow rounded-xl p-4">
+      <p class="text-ink">غایبین</p>
+      <p class="text-2xl font-bold text-red-500 mt-2">۶ نفر</p>
+    </div>
+
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-right">
+      <thead class="bg-lilac text-ink">
+        <tr>
+          <th class="p-3">ردیف</th>
+          <th class="p-3">نام دانش‌آموز</th>
+          <th class="p-3">کلاس</th>
+          <th class="p-3">تاریخ</th>
+          <th class="p-3">وضعیت حضور</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="border-b">
+          <td class="p-3">۱</td>
+          <td class="p-3">علی رضایی</td>
+          <td class="p-3">اول الف</td>
+          <td class="p-3">۱۴۰۵/۰۸/۲۵</td>
+          <td class="p-3">
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg">
+              حاضر
+            </span>
+          </td>
+        </tr>
+
+        <tr class="border-b">
+          <td class="p-3">۲</td>
+          <td class="p-3">سارا محمدی</td>
+          <td class="p-3">اول الف</td>
+          <td class="p-3">۱۴۰۵/۰۸/۲۵</td>
+          <td class="p-3">
+            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-lg">
+              غایب
+            </span>
+          </td>
+        </tr>
+
+        <tr class="border-b">
+          <td class="p-3">۳</td>
+          <td class="p-3">محمد احمدی</td>
+          <td class="p-3">دوم ب</td>
+          <td class="p-3">۱۴۰۵/۰۸/۲۵</td>
+          <td class="p-3">
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg">
+              حاضر
+            </span>
+          </td>
+        </tr>
+
+        <tr class="border-b">
+          <td class="p-3">۴</td>
+          <td class="p-3">نگار کریمی</td>
+          <td class="p-3">دوم ب</td>
+          <td class="p-3">۱۴۰۵/۰۸/۲۵</td>
+          <td class="p-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg">
+              تأخیر
+            </span>
+          </td>
+        </tr>
+
+        <tr class="border-b">
+          <td class="p-3">۵</td>
+          <td class="p-3">امیر حسینی</td>
+          <td class="p-3">سوم الف</td>
+          <td class="p-3">۱۴۰۵/۰۸/۲۵</td>
+          <td class="p-3">
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg">
+              حاضر
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+    </main>
+      <!-- ===== پایان محتوا ===== -->
+
+    </div>
+  </div>
+
+</body>
+</html>
