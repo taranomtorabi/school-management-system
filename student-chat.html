@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سامانه مدیریت مدرسه</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <!-- دکمه‌ی دارک/لایت (بدون جاوااسکریپت) -->
+  <input type="checkbox" id="theme-toggle" class="hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- ===== سایدبار (سمت راست چون RTL) ===== -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+        <span class="text-2xl">🎓</span>
+        <span>پنل دانش آموز </span>
+      </div>
+
+      <nav class="mt-4 flex flex-col gap-1 text-sm">
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">داشبورد</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">نمرات و کارنامه</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">برنامه هفتگی</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تکالیف</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">حضور و غیاب</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">امتیاز من</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">پیام به مدرسه</a>
+  <a href="#" class="rounded-xl bg-royal px-4 py-3 font-semibold">دستیار هوشمند</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تنظیمات</a>
+</nav>
+    </aside>
+
+    <!-- ===== بخش اصلی ===== -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- هدر -->
+      <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+
+        <!-- نوار جستجو (ظاهری) -->
+        <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در سامانه..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex items-center gap-4">
+
+          <!-- دکمه‌ی تم -->
+          <label for="theme-toggle" class="cursor-pointer text-xl" title="تغییر تم">🌓</label>
+
+          <!-- منوی اعلان‌ها -->
+          <details class="relative">
+            <summary class="list-none cursor-pointer text-xl relative">
+              🔔
+              <span class="absolute -top-2 -left-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">3</span>
+            </summary>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl bg-white dark:bg-ink p-3 text-sm shadow-lg z-10">
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">جلسه اولیا و مربیان فردا برگزار می‌شود</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">ثبت نمرات میان‌ترم الزامی است</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">پرداخت شهریه معوقه</p>
+            </div>
+          </details>
+
+          <!-- اطلاعات کاربر -->
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white font-bold">ع</div>
+            <div class="text-sm leading-tight">
+              <p class="font-semibold">پریا محمدی </p>
+              <p class="text-xs opacity-70"> دانش آموز </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+      <main class="flex-1 p-6">
+
+  <h1 class="mb-4 text-2xl font-bold">دستیار هوشمند</h1>
+
+  <section class="flex h-[32rem] flex-col rounded-2xl bg-white shadow-sm dark:bg-ink">
+
+    <!-- سربرگ چت -->
+    <div class="flex items-center gap-3 border-b border-mist p-4 dark:border-white/10">
+      <div class="flex h-10 w-10 items-center justify-center rounded-full bg-royal text-xl">🤖</div>
+      <div>
+        <p class="font-semibold">دستیار هوشمند مدرسه</p>
+        <p class="text-xs text-green-600">● آنلاین</p>
+      </div>
+    </div>
+
+    <!-- پیام‌ها -->
+    <div class="flex-1 space-y-4 overflow-y-auto p-4 text-sm">
+
+      <!-- پیام دستیار -->
+      <div class="flex justify-start">
+        <div class="max-w-[75%] rounded-2xl rounded-tr-sm bg-lilac p-3 dark:bg-night">
+          سلام سارا! 👋 من دستیار هوشمند مدرسه‌ام. هر سؤالی درباره‌ی درس‌ها، تکالیف یا برنامه‌ات داری بپرس.
+        </div>
+      </div>
+
+      <!-- پیام دانش‌آموز -->
+      <div class="flex justify-end">
+        <div class="max-w-[75%] rounded-2xl rounded-tl-sm bg-royal p-3 text-white">
+          تکلیف ریاضی فردا چیه؟
+        </div>
+      </div>
+
+      <div class="flex justify-start">
+        <div class="max-w-[75%] rounded-2xl rounded-tr-sm bg-lilac p-3 dark:bg-night">
+          برای فردا باید تمرین‌های صفحه‌ی ۴۸ کتاب ریاضی (سؤال ۱ تا ۱۰) رو حل کنی. مهلت تحویل: فردا ساعت ۸ صبح ✅
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <div class="max-w-[75%] rounded-2xl rounded-tl-sm bg-royal p-3 text-white">
+          برنامه‌ی امروزم چیه؟
+        </div>
+      </div>
+
+      <div class="flex justify-start">
+        <div class="max-w-[75%] rounded-2xl rounded-tr-sm bg-lilac p-3 dark:bg-night">
+          امروز ساعت ۸ ریاضی، ساعت ۹:۳۰ فارسی و ساعت ۱۱ زبان داری 📚
+        </div>
+      </div>
+
+    </div>
+
+    <!-- نوار نوشتن پیام (ظاهری) -->
+    <div class="flex items-center gap-3 border-t border-mist p-4 dark:border-white/10">
+      <input type="text" placeholder="سؤالت رو اینجا بنویس..." disabled
+             class="flex-1 rounded-xl bg-lilac p-3 text-sm outline-none dark:bg-night">
+      <button type="button" disabled class="rounded-xl bg-royal px-5 py-3 text-sm text-white">ارسال</button>
+    </div>
+
+  </section>
+
+</main>
+      <!-- ===== پایان محتوا ===== -->
+
+    </div>
+  </div>
+
+</body>
+</html>
