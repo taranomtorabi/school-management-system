@@ -1,1 +1,228 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غیبت‌ها و درخواست موجه‌سازی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="../dist/style.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-snow text-ink font-sans dark:bg-night dark:text-snow">
+
+    <main class="max-w-6xl mx-auto p-5 md:p-8">
+
+        <!-- Header -->
+        <header class="flex flex-wrap items-center justify-between gap-4 mb-8">
+            <div>
+                <p class="text-sm text-brand font-semibold">پنل والدین</p>
+                <h1 class="text-3xl font-bold mt-2">غیبت‌ها و حضور دانش‌آموز</h1>
+                <p class="opacity-60 mt-2">مشاهده سوابق حضور و ثبت درخواست موجه‌سازی غیبت</p>
+            </div>
+
+            <a href="#" class="bg-brand text-white px-6 py-3 rounded-xl hover:opacity-90 transition">
+                بازگشت به پنل
+            </a>
+        </header>
+
+        <!-- Student Information -->
+        <section class="bg-white dark:bg-ink rounded-3xl border border-slate-200 dark:border-white/10 p-6 mb-6 shadow-sm">
+
+            <div class="flex flex-col md:flex-row items-center gap-5">
+
+                <div class="w-20 h-20 rounded-2xl bg-sky-500/10 flex items-center justify-center text-4xl">
+                    🎓
+                </div>
+
+                <div class="flex-1 text-center md:text-right">
+                    <h2 class="text-xl font-bold">آرین محمدی</h2>
+                    <p class="opacity-60 mt-2">پایه هشتم • کلاس ۸/۲</p>
+                </div>
+
+                <span class="bg-green-500/10 text-green-600 px-5 py-3 rounded-xl text-sm font-semibold">
+                    دانش‌آموز فعال
+                </span>
+
+            </div>
+
+        </section>
+
+        <!-- Attendance Statistics -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+
+            <div class="bg-white dark:bg-ink rounded-2xl border border-slate-200 dark:border-white/10 p-5">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm opacity-60">روزهای حضور</span>
+                    <span class="text-2xl">✅</span>
+                </div>
+                <h3 class="text-3xl font-bold text-green-500 mt-4">۸۴</h3>
+                <p class="text-xs opacity-50 mt-2">روز در سال تحصیلی جاری</p>
+            </div>
+
+            <div class="bg-white dark:bg-ink rounded-2xl border border-slate-200 dark:border-white/10 p-5">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm opacity-60">غیبت موجه</span>
+                    <span class="text-2xl">🟢</span>
+                </div>
+                <h3 class="text-3xl font-bold text-green-500 mt-4">۳</h3>
+                <p class="text-xs opacity-50 mt-2">روز ثبت‌شده</p>
+            </div>
+
+            <div class="bg-white dark:bg-ink rounded-2xl border border-slate-200 dark:border-white/10 p-5">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm opacity-60">غیبت غیرموجه</span>
+                    <span class="text-2xl">⚠️</span>
+                </div>
+                <h3 class="text-3xl font-bold text-red-500 mt-4">۲</h3>
+                <p class="text-xs opacity-50 mt-2">روز ثبت‌شده</p>
+            </div>
+
+            <div class="bg-white dark:bg-ink rounded-2xl border border-slate-200 dark:border-white/10 p-5">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm opacity-60">درخواست‌های در انتظار</span>
+                    <span class="text-2xl">⏳</span>
+                </div>
+                <h3 class="text-3xl font-bold text-yellow-500 mt-4">۱</h3>
+                <p class="text-xs opacity-50 mt-2">در حال بررسی توسط مدرسه</p>
+            </div>
+
+        </section>
+
+        <!-- Absence Records -->
+        <section class="bg-white dark:bg-ink rounded-3xl border border-slate-200 dark:border-white/10 p-6 shadow-sm mb-8">
+
+            <div class="mb-6">
+                <h2 class="text-xl font-bold">سوابق غیبت</h2>
+                <p class="text-sm opacity-60 mt-2">فهرست غیبت‌های ثبت‌شده دانش‌آموز</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-right">
+                    <thead>
+                        <tr class="border-b border-slate-200 dark:border-white/10">
+                            <th class="p-4 font-semibold">تاریخ</th>
+                            <th class="p-4 font-semibold">روز هفته</th>
+                            <th class="p-4 font-semibold">علت غیبت</th>
+                            <th class="p-4 font-semibold">وضعیت</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="border-b border-slate-200 dark:border-white/10">
+                            <td class="p-4">۱۴۰۵/۰۸/۲۲</td>
+                            <td class="p-4">شنبه</td>
+                            <td class="p-4">بیماری</td>
+                            <td class="p-4">
+                                <span class="bg-yellow-500/10 text-yellow-600 px-3 py-2 rounded-lg text-xs">در انتظار بررسی</span>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-slate-200 dark:border-white/10">
+                            <td class="p-4">۱۴۰۵/۰۸/۱۵</td>
+                            <td class="p-4">شنبه</td>
+                            <td class="p-4">مشکل خانوادگی</td>
+                            <td class="p-4">
+                                <span class="bg-green-500/10 text-green-600 px-3 py-2 rounded-lg text-xs">موجه</span>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-slate-200 dark:border-white/10">
+                            <td class="p-4">۱۴۰۵/۰۸/۰۷</td>
+                            <td class="p-4">شنبه</td>
+                            <td class="p-4">بدون ثبت علت</td>
+                            <td class="p-4">
+                                <span class="bg-red-500/10 text-red-500 px-3 py-2 rounded-lg text-xs">غیرموجه</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-4">۱۴۰۵/۰۷/۲۹</td>
+                            <td class="p-4">چهارشنبه</td>
+                            <td class="p-4">بیماری</td>
+                            <td class="p-4">
+                                <span class="bg-green-500/10 text-green-600 px-3 py-2 rounded-lg text-xs">موجه</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- Excuse Request Form -->
+        <section class="bg-white dark:bg-ink rounded-3xl border border-slate-200 dark:border-white/10 p-6 md:p-8 shadow-sm">
+
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center text-2xl">
+                    📝
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold">ثبت درخواست موجه‌سازی غیبت</h2>
+                    <p class="text-sm opacity-60 mt-1">اطلاعات غیبت و علت آن را برای بررسی مدرسه ثبت کنید.</p>
+                </div>
+            </div>
+
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">نام دانش‌آموز</label>
+                    <input type="text" value="آرین محمدی" class="w-full p-3 rounded-xl border border-slate-200 dark:border-white/10 bg-snow dark:bg-night outline-none focus:border-brand">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">کلاس</label>
+                    <input type="text" value="هشتم / ۲" class="w-full p-3 rounded-xl border border-slate-200 dark:border-white/10 bg-snow dark:bg-night outline-none focus:border-brand">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">تاریخ غیبت</label>
+                    <input type="date" class="w-full p-3 rounded-xl border border-slate-200 dark:border-white/10 bg-snow dark:bg-night outline-none focus:border-brand">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">علت غیبت</label>
+                    <select class="w-full p-3 rounded-xl border border-slate-200 dark:border-white/10 bg-snow dark:bg-night outline-none focus:border-brand">
+                        <option>انتخاب علت</option>
+                        <option>بیماری</option>
+                        <option>مشکل خانوادگی</option>
+                        <option>شرایط اضطراری</option>
+                        <option>سایر موارد</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium mb-2">توضیحات والدین</label>
+                    <textarea rows="4" placeholder="توضیحات تکمیلی درباره علت غیبت را بنویسید..." class="w-full p-4 rounded-xl border border-slate-200 dark:border-white/10 bg-snow dark:bg-night outline-none focus:border-brand"></textarea>
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium mb-2">پیوست مدارک (در صورت نیاز)</label>
+                    <input type="file" class="w-full p-3 rounded-xl border border-slate-200 dark:border-white/10 bg-snow dark:bg-night">
+                    <p class="text-xs opacity-50 mt-2">امکان بارگذاری مدارک پزشکی یا سایر مستندات</p>
+                </div>
+
+                <div class="md:col-span-2 flex flex-wrap justify-end gap-3">
+                    <button type="reset" class="px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition">
+                        پاک کردن فرم
+                    </button>
+
+                    <button type="button" class="bg-brand text-white px-6 py-3 rounded-xl hover:opacity-90 transition">
+                        ثبت درخواست
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-sm opacity-40 mt-8 pb-6">
+            سامانه مدیریت مدرسه | پنل والدین | حضور و غیاب
+        </footer>
+
+    </main>
+
+</body>
+</html>
+
