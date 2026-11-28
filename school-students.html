@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مدیریت دانش‌آموزان</title>
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-snow text-ink font-sans min-h-screen">
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-deep text-white p-6">
+    <h1 class="text-2xl font-bold mb-10">مدرسه من</h1>
+
+    <nav class="space-y-4">
+      <a href="school-dashboard.html" class="block p-3 rounded-xl hover:bg-royal">داشبورد</a>
+      <a href="school-students.html" class="block p-3 rounded-xl bg-royal">دانش‌آموزان</a>
+      <a href="#" class="block p-3 rounded-xl hover:bg-royal">معلمان</a>
+      <a href="#" class="block p-3 rounded-xl hover:bg-royal">کلاس‌ها</a>
+      <a href="#" class="block p-3 rounded-xl hover:bg-royal">حضور و غیاب</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="flex-1 p-8">
+
+    <header class="flex justify-between items-center mb-8">
+      <div>
+        <h2 class="text-3xl font-bold">مدیریت دانش‌آموزان</h2>
+        <p class="text-gray-500 mt-2">مشاهده و مدیریت اطلاعات دانش‌آموزان مدرسه</p>
+      </div>
+
+      <button class="bg-royal text-white px-5 py-3 rounded-xl">
+        + افزودن دانش‌آموز
+      </button>
+    </header>
+
+    <!-- Statistics -->
+    <section class="grid grid-cols-3 gap-5 mb-8">
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm">
+        <p class="text-gray-500">کل دانش‌آموزان</p>
+        <h3 class="text-3xl font-bold mt-3">۳۲۰</h3>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm">
+        <p class="text-gray-500">دانش‌آموزان فعال</p>
+        <h3 class="text-3xl font-bold mt-3">۳۰۵</h3>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm">
+        <p class="text-gray-500">کلاس‌ها</p>
+        <h3 class="text-3xl font-bold mt-3">۱۲</h3>
+      </div>
+
+    </section>
+
+    <!-- Table -->
+    <section class="bg-white rounded-2xl shadow-sm p-6">
+
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-xl font-bold">لیست دانش‌آموزان</h3>
+
+        <input
+          type="text"
+          placeholder="جستجوی دانش‌آموز..."
+          class="border border-gray-200 rounded-xl px-4 py-3 outline-none"
+        >
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-right">
+          <thead class="bg-lilac text-deep">
+            <tr>
+              <th class="p-3">ردیف</th>
+              <th class="p-3">نام دانش‌آموز</th>
+              <th class="p-3">کد دانش‌آموزی</th>
+              <th class="p-3">پایه</th>
+              <th class="p-3">وضعیت</th>
+              <th class="p-3">عملیات</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="border-b">
+              <td class="p-3">۱</td>
+              <td class="p-3">آراد محمدی</td>
+              <td class="p-3">۱۰۰۱</td>
+              <td class="p-3">هفتم</td>
+              <td class="p-3">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">فعال</span>
+              </td>
+              <td class="p-3">
+                <button class="text-blue-600 ml-3">ویرایش</button>
+                <button class="text-red-500">حذف</button>
+              </td>
+            </tr>
+
+            <tr class="border-b">
+              <td class="p-3">۲</td>
+              <td class="p-3">سارا احمدی</td>
+              <td class="p-3">۱۰۰۲</td>
+              <td class="p-3">هشتم</td>
+              <td class="p-3">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">فعال</span>
+              </td>
+              <td class="p-3">
+                <button class="text-blue-600 ml-3">ویرایش</button>
+                <button class="text-red-500">حذف</button>
+              </td>
+            </tr>
+
+            <tr class="border-b">
+              <td class="p-3">۳</td>
+              <td class="p-3">پارسا رضایی</td>
+              <td class="p-3">۱۰۰۳</td>
+              <td class="p-3">نهم</td>
+              <td class="p-3">
+                <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full">غیرفعال</span>
+              </td>
+              <td class="p-3">
+                <button class="text-blue-600 ml-3">ویرایش</button>
+                <button class="text-red-500">حذف</button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
