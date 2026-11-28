@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>داشبورد دانش‌آموز - سامانه مدیریت مدرسه</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <!-- دکمه‌ی دارک/لایت (بدون جاوااسکریپت) -->
+  <input type="checkbox" id="theme-toggle" class="hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- ===== سایدبار (سمت راست چون RTL) ===== -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+        <span class="text-2xl">🎓</span>
+        <span>پنل دانش آموز </span>
+      </div>
+
+      <nav class="mt-4 flex flex-col gap-1 text-sm">
+    <!-- داشبورد فعال است -->
+    <a href="student-dashboard.html" class="rounded-xl bg-royal px-4 py-3 font-semibold text-white">داشبورد</a>
+    
+    <!-- بقیه غیرفعال هستند -->
+    <a href="student-grades.html" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">نمرات و کارنامه</a>
+    <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">برنامه هفتگی</a>
+    <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">تکالیف</a>
+    <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">حضور و غیاب</a>
+    <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">امتیاز من</a>
+    <a href="student-contact.html" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">پیام به مدرسه</a>
+    <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">دستیار هوشمند</a>
+    <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">تنظیمات</a>
+</nav>
+    </aside>
+
+    <!-- ===== بخش اصلی ===== -->
+    <div class="flex-1 flex flex-col"
+
+      <!-- هدر -->
+      <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+
+        <!-- نوار جستجو (ظاهری) -->
+        <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در سامانه..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex items-center gap-4">
+
+          <!-- دکمه‌ی تم -->
+          <label for="theme-toggle" class="cursor-pointer text-xl" title="تغییر تم">🌓</label>
+
+          <!-- منوی اعلان‌ها -->
+          <details class="relative">
+            <summary class="list-none cursor-pointer text-xl relative">
+              🔔
+              <span class="absolute -top-2 -left-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">3</span>
+            </summary>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl bg-white dark:bg-ink p-3 text-sm shadow-lg z-10">
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">جلسه اولیا و مربیان فردا برگزار می‌شود</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">ثبت نمرات میان‌ترم الزامی است</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">پرداخت شهریه معوقه</p>
+            </div>
+          </details>
+
+          <!-- اطلاعات کاربر -->
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white font-bold">ع</div>
+            <div class="text-sm leading-tight">
+              <p class="font-semibold">پریا محمدی </p>
+              <p class="text-xs opacity-70"> دانش آموز </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+      <main class="flex-1 p-6">
+    <!-- محتوای داشبورد دانش‌آموز -->
+<div class="p-6 space-y-6">
+    
+    <!-- هدر صفحه -->
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-ink dark:text-snow">داشبورد من</h1>
+        <span class="text-sm text-gray-500 dark:text-gray-400">امروز: شنبه، ۱۲ آبان ۱۴۰۳</span>
+    </div>
+
+    <!-- ۳ کارت بالای صفحه -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- کارت معدل -->
+        <div class="bg-white dark:bg-white/5 rounded-2xl border border-gray-200 dark:border-white/10 p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+                <p class="text-sm text-gray-500 dark:text-gray-400">معدل کل ترم</p>
+                <span class="text-2xl">📊</span>
+            </div>
+            <p class="text-3xl font-bold mt-2 text-ink dark:text-snow">۱۸.۲۵</p>
+            <p class="text-xs text-green-500 mt-2 font-medium">▲ ۰.۳ نسبت به ماه قبل</p>
+        </div>
+
+        <!-- کارت تکالیف -->
+        <div class="bg-white dark:bg-white/5 rounded-2xl border border-gray-200 dark:border-white/10 p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+                <p class="text-sm text-gray-500 dark:text-gray-400">تکالیف نزدیک</p>
+                <span class="text-2xl">📝</span>
+            </div>
+            <p class="text-3xl font-bold mt-2 text-ink dark:text-snow">۳</p>
+            <p class="text-xs text-red-500 mt-2 font-medium">نزدیک‌ترین مهلت: فردا</p>
+        </div>
+
+        <!-- کارت کلاس بعدی -->
+        <div class="bg-white dark:bg-white/5 rounded-2xl border border-gray-200 dark:border-white/10 p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+                <p class="text-sm text-gray-500 dark:text-gray-400">کلاس بعدی امروز</p>
+                <span class="text-2xl">⏰</span>
+            </div>
+            <p class="text-xl font-bold mt-3 text-ink dark:text-snow">ریاضی - ۱۰:۳۰</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">آقای رضایی - کلاس ۲۰۴</p>
+        </div>
+
+    </div>
+
+    <!-- بخش پایین: برنامه امروز و تکالیف -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- جدول برنامه امروز (۲ ستون رو اشغال میکنه) -->
+        <div class="lg:col-span-2 bg-white dark:bg-white/5 rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden shadow-sm">
+            <div class="p-4 border-b border-gray-200 dark:border-white/10 flex justify-between items-center bg-gray-50/50 dark:bg-white/5">
+                <h2 class="font-bold text-ink dark:text-snow">برنامه‌ی امروز</h2>
+                <a href="#" class="text-sm text-royal dark:text-blue-400 font-semibold">مشاهده کامل</a>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-right">
+                    <thead class="bg-gray-50 dark:bg-black/20 text-gray-500 dark:text-gray-400">
+                        <tr>
+                            <th class="p-3 font-medium">ساعت</th>
+                            <th class="p-3 font-medium">درس</th>
+                            <th class="p-3 font-medium">دبیر</th>
+                            <th class="p-3 font-medium">کلاس</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 dark:divide-white/10">
+                        <tr>
+                            <td class="p-3 text-gray-500 dark:text-gray-400">۰۸:۰۰</td>
+                            <td class="p-3 font-medium text-ink dark:text-snow">ادبیات</td>
+                            <td class="p-3 text-gray-600 dark:text-gray-300">خانم احمدی</td>
+                            <td class="p-3 text-gray-600 dark:text-gray-300">۲۰۱</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 text-gray-500 dark:text-gray-400">۰۹:۱۵</td>
+                            <td class="p-3 font-medium text-ink dark:text-snow">زبان انگلیسی</td>
+                            <td class="p-3 text-gray-600 dark:text-gray-300">آقای کریمی</td>
+                            <td class="p-3 text-gray-600 dark:text-gray-300">۱۰۵</td>
+                        </tr>
+                        <!-- کلاس بعدی که با رنگ رویال مشخص شده -->
+                        <tr class="bg-blue-50 dark:bg-royal/20">
+                            <td class="p-3 font-bold text-royal dark:text-blue-300">۱۰:۳۰</td>
+                            <td class="p-3 font-bold text-royal dark:text-blue-300">ریاضی</td>
+                            <td class="p-3 font-bold text-royal dark:text-blue-300">آقای رضایی</td>
+                            <td class="p-3 font-bold text-royal dark:text-blue-300">۲۰۴</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 text-gray-500 dark:text-gray-400">۱۱:۴۵</td>
+                            <td class="p-3 font-medium text-ink dark:text-snow">فیزیک</td>
+                            <td class="p-3 text-gray-600 dark:text-gray-300">خانم موسوی</td>
+                            <td class="p-3 text-gray-600 dark:text-gray-300">آزمایشگاه</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- لیست تکالیف نزدیک -->
+        <div class="bg-white dark:bg-white/5 rounded-2xl border border-gray-200 dark:border-white/10 shadow-sm flex flex-col">
+            <div class="p-4 border-b border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-white/5">
+                <h2 class="font-bold text-ink dark:text-snow">تکالیف پیش‌رو</h2>
+            </div>
+            <div class="p-4 flex-1">
+                <ul class="space-y-4">
+                    <li class="flex flex-col gap-1 border-b border-gray-100 dark:border-white/10 pb-3">
+                        <div class="flex justify-between items-start">
+                            <span class="text-sm font-medium text-ink dark:text-snow">حل تمرین‌های فصل ۴ ریاضی</span>
+                            <span class="text-[10px] bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400 px-2 py-1 rounded-md">فردا</span>
+                        </div>
+                        <span class="text-xs text-gray-500">دبیر: آقای رضایی</span>
+                    </li>
+                    <li class="flex flex-col gap-1 border-b border-gray-100 dark:border-white/10 pb-3">
+                        <div class="flex justify-between items-start">
+                            <span class="text-sm font-medium text-ink dark:text-snow">نگارش انشای ادبیات</span>
+                            <span class="text-[10px] bg-amber-100 text-amber-600 dark:bg-amber-500/20 dark:text-amber-400 px-2 py-1 rounded-md">۲ روز مانده</span>
+                        </div>
+                        <span class="text-xs text-gray-500">دبیر: خانم احمدی</span>
+                    </li>
+                    <li class="flex flex-col gap-1 pb-1">
+                        <div class="flex justify-between items-start">
+                            <span class="text-sm font-medium text-ink dark:text-snow">گزارش آزمایش فیزیک</span>
+                            <span class="text-[10px] bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-gray-300 px-2 py-1 rounded-md">۴ روز مانده</span>
+                        </div>
+                        <span class="text-xs text-gray-500">دبیر: خانم موسوی</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-4 border-t border-gray-200 dark:border-white/10">
+                <a href="#" class="block text-center w-full py-2 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 text-sm font-medium rounded-xl transition-colors">مشاهده همه تکالیف</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+      </main>
+      <!-- ===== پایان محتوا ===== -->
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>نمرات و کارنامه - سامانه مدیریت مدرسه </title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+  <style>
+  @media print {
+    body * { visibility: hidden; }
+    #print-area, #print-area * { visibility: visible; }
+    #print-area { position: absolute; left: 0; top: 0; width: 100%; border: none !important; box-shadow: none !important; }
+    .no-print { display: none !important; }
+  }
+</style>
+</head>
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <!-- دکمه‌ی دارک/لایت (بدون جاوااسکریپت) -->
+  <input type="checkbox" id="theme-toggle" class="hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- ===== سایدبار (سمت راست چون RTL) ===== -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+        <span class="text-2xl">🎓</span>
+        <span>پنل دانش آموز </span>
+      </div>
+
+<nav class="mt-4 flex flex-col gap-1 text-sm">
+    <a href="student-dashboard.html" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">داشبورد</a>
+    <!-- لینک فعال -->
+    <a href="student-grades.html" class="rounded-xl bg-royal px-4 py-3 font-semibold text-white">نمرات و کارنامه</a>
+    <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10 transition-colors">برنامه هفتگی</a>
+    <!-- بقیه منوها ... -->
+</nav>
+    </aside>
+
+    <!-- ===== بخش اصلی ===== -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- هدر -->
+      <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+
+        <!-- نوار جستجو (ظاهری) -->
+        <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در سامانه..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex items-center gap-4">
+
+          <!-- دکمه‌ی تم -->
+          <label for="theme-toggle" class="cursor-pointer text-xl" title="تغییر تم">🌓</label>
+
+          <!-- منوی اعلان‌ها -->
+          <details class="relative">
+            <summary class="list-none cursor-pointer text-xl relative">
+              🔔
+              <span class="absolute -top-2 -left-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">3</span>
+            </summary>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl bg-white dark:bg-ink p-3 text-sm shadow-lg z-10">
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">جلسه اولیا و مربیان فردا برگزار می‌شود</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">ثبت نمرات میان‌ترم الزامی است</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">پرداخت شهریه معوقه</p>
+            </div>
+          </details>
+
+          <!-- اطلاعات کاربر -->
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white font-bold">ع</div>
+            <div class="text-sm leading-tight">
+              <p class="font-semibold">پریا محمدی </p>
+              <p class="text-xs opacity-70"> دانش آموز </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+      <main class="flex-1 p-6 overflow-y-auto">
+        <!-- محتوای نمرات و کارنامه -->
+<div class="space-y-6 max-w-5xl mx-auto">
+    
+    <!-- هدر صفحه و دکمه چاپ -->
+    <div class="flex justify-between items-center no-print">
+        <h1 class="text-2xl font-bold text-ink dark:text-snow">نمرات و کارنامه</h1>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-royal hover:bg-opacity-90 text-white px-5 py-2.5 rounded-xl font-medium transition-all shadow-sm">
+            <span>🖨️</span> چاپ کارنامه
+        </button>
+    </div>
+
+    <!-- جدول نمرات (نمایش در سایت) -->
+    <div class="bg-white dark:bg-ink rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden shadow-sm no-print">
+        <div class="p-4 border-b border-gray-200 dark:border-white/10 bg-mist/50 dark:bg-white/5">
+            <h2 class="font-bold text-ink dark:text-snow">نمرات ترم جاری</h2>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-right">
+                <thead class="bg-mist dark:bg-night text-gray-600 dark:text-gray-300">
+                    <tr>
+                        <th class="p-4 font-medium">درس</th>
+                        <th class="p-4 font-medium">نمره کتبی</th>
+                        <th class="p-4 font-medium">نمره مستمر</th>
+                        <th class="p-4 font-medium">نمره نهایی</th>
+                        <th class="p-4 font-medium">وضعیت</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-white/10">
+                    <tr>
+                        <td class="p-4 font-medium text-ink dark:text-snow">ریاضی</td>
+                        <td class="p-4">۱۷</td>
+                        <td class="p-4">۲۰</td>
+                        <td class="p-4 font-bold text-royal dark:text-blue-400">۱۹</td>
+                        <td class="p-4"><span class="text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-500/10 px-2 py-1 rounded-md text-xs">قبول</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-medium text-ink dark:text-snow">ادبیات فارسی</td>
+                        <td class="p-4">۱۶</td>
+                        <td class="p-4">۱۹</td>
+                        <td class="p-4 font-bold text-royal dark:text-blue-400">۱۷.۵</td>
+                        <td class="p-4"><span class="text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-500/10 px-2 py-1 rounded-md text-xs">قبول</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-medium text-ink dark:text-snow">فیزیک</td>
+                        <td class="p-4">۱۴</td>
+                        <td class="p-4">۱۶</td>
+                        <td class="p-4 font-bold text-royal dark:text-blue-400">۱۵</td>
+                        <td class="p-4"><span class="text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-500/10 px-2 py-1 rounded-md text-xs">قبول</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-medium text-ink dark:text-snow">زبان انگلیسی</td>
+                        <td class="p-4">۱۹</td>
+                        <td class="p-4">۲۰</td>
+                        <td class="p-4 font-bold text-royal dark:text-blue-400">۲۰</td>
+                        <td class="p-4"><span class="text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-500/10 px-2 py-1 rounded-md text-xs">قبول</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- بخش کارنامه قابل چاپ -->
+    <div id="print-area" class="bg-white dark:bg-ink p-8 rounded-2xl border border-gray-200 dark:border-white/10 shadow-sm">
+        
+        <!-- هدر کارنامه -->
+        <div class="text-center border-b-2 border-gray-800 dark:border-white pb-4 mb-6">
+            <h2 class="text-2xl font-bold text-ink dark:text-snow mb-2">کارنامه تحصیلی دانش‌آموز</h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400">دبیرستان نمونه - سال تحصیلی ۱۴۰۳-۱۴۰۲</p>
+        </div>
+
+        <!--
+        اطلاعات دانش‌آموز -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-sm">
+            <div>
+                <span class="text-gray-500 block mb-1">نام و نام خانوادگی:</span>
+                <span class="font-bold text-ink dark:text-snow">رضا محمدی</span>
+            </div>
+            <div>
+                <span class="text-gray-500 block mb-1">کلاس:</span>
+                <span class="font-bold text-ink dark:text-snow">دهم - ریاضی ۱</span>
+            </div>
+            <div>
+                <span class="text-gray-500 block mb-1">شماره دانش‌آموزی:</span>
+                <span class="font-bold text-ink dark:text-snow">۱۴۰۳۰۸۹</span>
+            </div>
+            <div>
+                <span class="text-gray-500 block mb-1">تاریخ صدور:</span>
+                <span class="font-bold text-ink dark:text-snow">۱۴۰۳/۰۶/۱۵</span>
+            </div>
+        </div>
+
+        <!-- جدول نمرات کارنامه -->
+        <table class="w-full text-sm text-right border-collapse border border-gray-300 dark:border-gray-600 mb-6">
+            <thead class="bg-mist dark:bg-white/10">
+                <tr>
+                    <th class="border border-gray-300 dark:border-gray-600 p-3">درس</th>
+                    <th class="border border-gray-300 dark:border-gray-600 p-3 text-center">نمره نهایی</th>
+                    <th class="border border-gray-300 dark:border-gray-600 p-3 text-center">وضعیت</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3">ریاضی</td>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3 text-center">۱۹</td>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3 text-center">قبول</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3">ادبیات فارسی</td>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3 text-center">۱۷.۵</td>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3 text-center">قبول</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3">فیزیک</td>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3 text-center">۱۵</td>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3 text-center">قبول</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3">زبان انگلیسی</td>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3 text-center">۲۰</td>
+                    <td class="border border-gray-300 dark:border-gray-600 p-3 text-center">قبول</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- خلاصه وضعیت -->
+        <div class="flex justify-between items-center mt-8 pt-4 border-t border-gray-300 dark:border-gray-600">
+            <div class="text-base">
+                <span class="text-gray-600 dark:text-gray-400">معدل کل:</span>
+                <span class="font-bold text-lg text-royal dark:text-blue-400 ml-2">۱۷.۸۸</span>
+            </div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+                <p>مهر و امضای مدیر مدرسه</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+      </main>
+      <!-- ===== پایان محتوا ===== -->
+    </div>
+  </div>
+
+</body>
+</html>
