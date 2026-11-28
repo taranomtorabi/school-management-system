@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تکالیف دانش‌آموز</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+<input type="checkbox" id="theme-toggle" class="hidden">
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+    <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+      <span class="text-2xl">🎓</span>
+      <span>پنل دانش‌آموز</span>
+    </div>
+
+    <nav class="mt-4 flex flex-col gap-1 text-sm">
+      <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">داشبورد</a>
+      <a href="student-schedule.html" class="rounded-xl px-4 py-3 hover:bg-white/10">برنامه هفتگی</a>
+      <a href="student-attendance.html" class="rounded-xl px-4 py-3 hover:bg-white/10">حضور و غیاب</a>
+      <a href="student-homework.html" class="rounded-xl bg-royal px-4 py-3 font-semibold">تکالیف من</a>
+      <a href="student-next-class.html" class="rounded-xl px-4 py-3 hover:bg-white/10">کلاس بعدی</a>
+      <a href="student-points.html" class="rounded-xl px-4 py-3 hover:bg-white/10">امتیازات</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <div class="flex-1 flex flex-col">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+      <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+        <span>🔍</span>
+        <input type="text" placeholder="جستجو..." class="bg-transparent outline-none w-full text-sm">
+      </div>
+
+      <div class="flex items-center gap-3">
+        <span>🔔</span>
+        <span class="font-semibold text-sm">دانش‌آموز</span>
+        <span class="text-2xl">👤</span>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="p-6">
+
+      <div class="mb-6">
+        <h1 class="text-2xl font-bold">تکالیف من</h1>
+        <p class="text-gray-500 mt-2">مشاهده تکالیف و مهلت انجام آن‌ها</p>
+      </div>
+
+      <!-- Statistics -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+
+        <div class="bg-white dark:bg-ink rounded-xl p-5 shadow-sm">
+          <p class="text-gray-500 text-sm">کل تکالیف</p>
+          <p class="text-3xl font-bold text-royal mt-3">۸</p>
+        </div>
+
+        <div class="bg-white dark:bg-ink rounded-xl p-5 shadow-sm">
+          <p class="text-gray-500 text-sm">انجام شده</p>
+          <p class="text-3xl font-bold text-green-600 mt-3">۵</p>
+        </div>
+
+        <div class="bg-white dark:bg-ink rounded-xl p-5 shadow-sm">
+          <p class="text-gray-500 text-sm">باقی‌مانده</p>
+          <p class="text-3xl font-bold text-orange-500 mt-3">۳</p>
+        </div>
+
+      </div>
+
+      <!-- Homework Table -->
+      <div class="bg-white dark:bg-ink rounded-xl shadow-sm overflow-x-auto">
+
+        <div class="p-5 border-b border-gray-200">
+          <h2 class="font-bold text-lg">فهرست تکالیف</h2>
+        </div>
+
+        <table class="w-full text-center text-sm">
+          <thead class="bg-mist dark:bg-night">
+            <tr>
+              <th class="p-3">ردیف</th>
+              <th class="p-3">عنوان تکلیف</th>
+              <th class="p-3">درس</th>
+              <th class="p-3">مهلت تحویل</th>
+              <th class="p-3">وضعیت</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr class="border-b border-gray-200">
+              <td class="p-3">۱</td>
+              <td class="p-3 font-semibold">حل تمرین صفحه ۲۵</td>
+              <td class="p-3">ریاضی</td>
+              <td class="p-3">۱۴۰۵/۰۹/۱۰</td>
+              <td class="p-3">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">انجام شده</span>
+              </td>
+            </tr>
+
+            <tr class="border-b border-gray-200">
+              <td class="p-3">۲</td><td class="p-3 font-semibold">خلاصه درس دوم</td>
+              <td class="p-3">علوم</td>
+              <td class="p-3">۱۴۰۵/۰۹/۱۲</td>
+              <td class="p-3">
+                <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs">باقی‌مانده</span>
+              </td>
+            </tr>
+
+            <tr class="border-b border-gray-200">
+              <td class="p-3">۳</td>
+              <td class="p-3 font-semibold">نوشتن املا</td>
+              <td class="p-3">فارسی</td>
+              <td class="p-3">۱۴۰۵/۰۹/۱۳</td>
+              <td class="p-3">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">انجام شده</span>
+              </td>
+            </tr>
+
+            <tr class="border-b border-gray-200">
+              <td class="p-3">۴</td>
+              <td class="p-3 font-semibold">مطالعه درس سوم</td>
+              <td class="p-3">مطالعات اجتماعی</td>
+              <td class="p-3">۱۴۰۵/۰۹/۱۵</td>
+              <td class="p-3">
+                <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs">باقی‌مانده</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="p-3">۵</td>
+              <td class="p-3 font-semibold">رسم شکل هندسی</td>
+              <td class="p-3">ریاضی</td>
+              <td class="p-3">۱۴۰۵/۰۹/۱۶</td>
+              <td class="p-3">
+                <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs">باقی‌مانده</span>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>

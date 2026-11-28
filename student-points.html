@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>امتیازات من</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <button id="theme-toggle" class="hidden"></button>
+
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <h1 class="text-xl font-bold mb-8">پنل دانش‌آموز</h1>
+
+      <nav class="flex flex-col gap-2">
+        <a href="student-schedule.html" class="rounded-xl p-3 hover:bg-white/10">
+          برنامه کلاسی
+        </a>
+
+        <a href="student-attendance.html" class="rounded-xl p-3 hover:bg-white/10">
+          حضور و غیاب
+        </a>
+
+        <a href="student-homework.html" class="rounded-xl p-3 hover:bg-white/10">
+          تکالیف من
+        </a>
+
+        <a href="student-next-class.html" class="rounded-xl p-3 hover:bg-white/10">
+          کلاس بعدی
+        </a>
+
+        <a href="student-points.html" class="rounded-xl bg-royal p-3">
+          امتیازات من
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 min-w-0">
+
+      <!-- Header -->
+      <header class="bg-white dark:bg-ink p-5 shadow-sm">
+        <h2 class="text-2xl font-bold">امتیازات من</h2>
+        <p class="text-sm mt-2 text-gray-500">
+          مشاهده امتیازهای ثبت‌شده و فعالیت‌های من
+        </p>
+      </header>
+
+      <section class="p-6">
+
+        <!-- Total Points -->
+        <div class="bg-royal text-white rounded-2xl p-6 mb-6">
+          <p class="text-lg">مجموع امتیازات من</p>
+          <h3 class="text-4xl font-bold mt-3">۷۰</h3>
+          <p class="mt-2 text-sm">امتیاز کسب‌شده</p>
+        </div>
+
+        <!-- Points Table -->
+        <div class="bg-white dark:bg-ink rounded-2xl p-5 shadow-sm">
+
+          <h3 class="text-lg font-bold mb-5">جزئیات امتیازات</h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-right">
+              <thead class="bg-mist dark:bg-night">
+                <tr>
+                  <th class="p-3">ردیف</th>
+                  <th class="p-3">عنوان فعالیت</th>
+                  <th class="p-3">تاریخ</th>
+                  <th class="p-3">امتیاز</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="border-b">
+                  <td class="p-3">۱</td>
+                  <td class="p-3 font-bold">حضور منظم</td>
+                  <td class="p-3">۱۴۰۵/۰۸/۲۰</td>
+                  <td class="p-3 text-green-600 font-bold">+۲۰</td>
+                </tr>
+
+                <tr class="border-b">
+                  <td class="p-3">۲</td>
+                  <td class="p-3 font-bold">انجام تکالیف</td>
+                  <td class="p-3">۱۴۰۵/۰۸/۲۱</td>
+                  <td class="p-3 text-green-600 font-bold">+۱۵</td>
+                </tr>
+
+                <tr class="border-b">
+                  <td class="p-3">۳</td>
+                  <td class="p-3 font-bold">مشارکت کلاسی</td>
+                  <td class="p-3">۱۴۰۵/۰۸/۲۲</td>
+                  <td class="p-3 text-green-600 font-bold">+۱۰</td>
+                </tr>
+
+                <tr>
+                  <td class="p-3">۴</td>
+                  <td class="p-3 font-bold">فعالیت گروهی</td>
+                  <td class="p-3">۱۴۰۵/۰۸/۲۳</td>
+                  <td class="p-3 text-green-600 font-bold">+۲۵</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
