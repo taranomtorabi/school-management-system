@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سامانه مدیریت مدرسه</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <!-- دکمه‌ی دارک/لایت (بدون جاوااسکریپت) -->
+  <input type="checkbox" id="theme-toggle" class="hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- ===== سایدبار (سمت راست چون RTL) ===== -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+        <span class="text-2xl">🎓</span>
+        <span>پنل دانش آموز </span>
+      </div>
+
+      <nav class="mt-4 flex flex-col gap-1 text-sm">
+  <a href="#" class="rounded-xl bg-royal px-4 py-3 font-semibold">داشبورد</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">نمرات و کارنامه</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">برنامه هفتگی</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تکالیف</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">حضور و غیاب</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">امتیاز من</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">پیام به مدرسه</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">دستیار هوشمند</a>
+  <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تنظیمات</a>
+</nav>
+    </aside>
+
+    <!-- ===== بخش اصلی ===== -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- هدر -->
+      <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+
+        <!-- نوار جستجو (ظاهری) -->
+        <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در سامانه..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex items-center gap-4">
+
+          <!-- دکمه‌ی تم -->
+          <label for="theme-toggle" class="cursor-pointer text-xl" title="تغییر تم">🌓</label>
+
+          <!-- منوی اعلان‌ها -->
+          <details class="relative">
+            <summary class="list-none cursor-pointer text-xl relative">
+              🔔
+              <span class="absolute -top-2 -left-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">3</span>
+            </summary>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl bg-white dark:bg-ink p-3 text-sm shadow-lg z-10">
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">جلسه اولیا و مربیان فردا برگزار می‌شود</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">ثبت نمرات میان‌ترم الزامی است</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">پرداخت شهریه معوقه</p>
+            </div>
+          </details>
+
+          <!-- اطلاعات کاربر -->
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white font-bold">ع</div>
+            <div class="text-sm leading-tight">
+              <p class="font-semibold">پریا محمدی </p>
+              <p class="text-xs opacity-70"> دانش آموز </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+      <main class="flex-1 p-6 space-y-6">
+
+  <h1 class="text-2xl font-bold">پیشرفت نمرات</h1>
+
+  <!-- کارت‌های خلاصه -->
+  <section class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <div class="rounded-2xl bg-lilac p-5 dark:bg-ink">
+      <p class="text-sm opacity-70">معدل کل</p>
+      <p class="mt-2 text-3xl font-bold">۱۸٫۲۵</p>
+    </div>
+    <div class="rounded-2xl bg-accent/30 p-5 dark:bg-ink">
+      <p class="text-sm opacity-70">بهترین درس</p>
+      <p class="mt-2 text-3xl font-bold">ریاضی</p>
+    </div>
+    <div class="rounded-2xl bg-info/25 p-5 dark:bg-ink">
+      <p class="text-sm opacity-70">پیشرفت نسبت به ترم قبل</p>
+      <p class="mt-2 text-3xl font-bold text-green-600">+۱٫۵</p>
+    </div>
+  </section>
+
+  <!-- نمودار میله‌ای معدل ماهانه -->
+  <section class="rounded-2xl bg-white p-5 shadow-sm dark:bg-ink">
+    <h2 class="mb-4 font-semibold">روند معدل در ماه‌های اخیر</h2>
+    <div class="flex h-48 items-stretch justify-around gap-3">
+      <div class="flex flex-1 flex-col items-center gap-2">
+        <span class="text-xs">۱۶٫۵</span>
+        <div class="flex w-full flex-1 items-end"><div class="w-full rounded-t-lg bg-brand" style="height:70%"></div></div>
+        <span class="text-xs">مهر</span>
+      </div>
+      <div class="flex flex-1 flex-col items-center gap-2">
+        <span class="text-xs">۱۷</span>
+        <div class="flex w-full flex-1 items-end"><div class="w-full rounded-t-lg bg-brand" style="height:78%"></div></div>
+        <span class="text-xs">آبان</span>
+      </div>
+      <div class="flex flex-1 flex-col items-center gap-2">
+        <span class="text-xs">۱۷٫۵</span>
+        <div class="flex w-full flex-1 items-end"><div class="w-full rounded-t-lg bg-brand" style="height:85%"></div></div>
+        <span class="text-xs">آذر</span>
+      </div>
+      <div class="flex flex-1 flex-col items-center gap-2">
+        <span class="text-xs">۱۸٫۲۵</span>
+        <div class="flex w-full flex-1 items-end"><div class="w-full rounded-t-lg bg-royal" style="height:92%"></div></div>
+        <span class="text-xs">دی</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- نمرات هر درس (نوار پیشرفت) -->
+  <section class="rounded-2xl bg-white p-5 shadow-sm dark:bg-ink">
+    <h2 class="mb-4 font-semibold">نمره‌ی دروس</h2>
+    <div class="space-y-4 text-sm">
+      <div>
+        <div class="mb-1 flex justify-between"><span>ریاضی</span><span>۱۹٫۵</span></div>
+        <div class="h-3 rounded-full bg-lilac dark:bg-night"><div class="h-3 rounded-full bg-brand" style="width:97%"></div></div>
+      </div>
+      <div>
+        <div class="mb-1 flex justify-between"><span>فارسی</span><span>۱۸٫۲۵</span></div>
+        <div class="h-3 rounded-full bg-lilac dark:bg-night"><div class="h-3 rounded-full bg-brand" style="width:91%"></div></div>
+      </div>
+      <div>
+        <div class="mb-1 flex justify-between"><span>علوم</span><span>۱۹</span></div>
+        <div class="h-3 rounded-full bg-lilac dark:bg-night"><div class="h-3 rounded-full bg-brand" style="width:95%"></div></div>
+      </div>
+      <div>
+        <div class="mb-1 flex justify-between"><span>زبان</span><span>۱۷</span></div>
+        <div class="h-3 rounded-full bg-lilac dark:bg-night"><div class="h-3 rounded-full bg-accent" style="width:85%"></div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+      <!-- ===== پایان محتوا ===== -->
+
+    </div>
+  </div>
+
+</body>
+</html>

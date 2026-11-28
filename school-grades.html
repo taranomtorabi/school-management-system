@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سامانه مدیریت مدرسه</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
+</head>
+<body class="bg-snow text-ink dark:bg-night dark:text-snow font-sans">
+
+  <!-- دکمه‌ی دارک/لایت (بدون جاوااسکریپت) -->
+  <input type="checkbox" id="theme-toggle" class="hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- ===== سایدبار (سمت راست چون RTL) ===== -->
+    <aside class="w-64 shrink-0 bg-deep text-white flex flex-col p-4">
+      <div class="flex items-center gap-2 px-2 py-4 text-lg font-bold">
+        <span class="text-2xl">🎓</span>
+        <span>مدیریت مدرسه</span>
+      </div>
+
+      <nav class="mt-4 flex flex-col gap-1 text-sm">
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">داشبورد</a>
+        <a href="#" class="rounded-xl bg-royal px-4 py-3 font-semibold">ثبت نمرات</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">دانش‌آموزان</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">معلمان</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">کلاس‌ها</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">امور مالی</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">اعلان‌ها</a>
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-white/10">تنظیمات</a>
+      </nav>
+    </aside>
+
+    <!-- ===== بخش اصلی ===== -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- هدر -->
+      <header class="flex items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-4 shadow-sm">
+
+        <!-- نوار جستجو (ظاهری) -->
+        <div class="flex items-center gap-2 rounded-xl bg-mist dark:bg-night px-4 py-2 w-full max-w-sm">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در سامانه..." class="bg-transparent outline-none w-full text-sm">
+        </div>
+
+        <div class="flex items-center gap-4">
+
+          <!-- دکمه‌ی تم -->
+          <label for="theme-toggle" class="cursor-pointer text-xl" title="تغییر تم">🌓</label>
+
+          <!-- منوی اعلان‌ها -->
+          <details class="relative">
+            <summary class="list-none cursor-pointer text-xl relative">
+              🔔
+              <span class="absolute -top-2 -left-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">3</span>
+            </summary>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl bg-white dark:bg-ink p-3 text-sm shadow-lg z-10">
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">جلسه اولیا و مربیان فردا برگزار می‌شود</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">ثبت نمرات میان‌ترم الزامی است</p>
+              <p class="rounded-lg p-2 hover:bg-mist dark:hover:bg-night">پرداخت شهریه معوقه</p>
+            </div>
+          </details>
+
+          <!-- اطلاعات کاربر -->
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white font-bold">ع</div>
+            <div class="text-sm leading-tight">
+              <p class="font-semibold">رعنا اکبری</p>
+              <p class="text-xs opacity-70">مدیر مدرسه</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+     
+      <!-- ===== محتوا از اینجا شروع می‌شود ===== -->
+<main class="flex-1 p-6 space-y-6">
+
+  <h1 class="text-2xl font-bold">ثبت نمرات</h1>
+
+  <!-- انتخاب کلاس و درس (ظاهری) -->
+  <section class="grid gap-4 rounded-2xl bg-white p-5 shadow-sm dark:bg-ink sm:grid-cols-3">
+    <label class="text-sm">
+      کلاس
+      <select class="mt-1 w-full rounded-xl bg-lilac p-2 dark:bg-night">
+        <option>هفتم الف</option>
+        <option>هفتم ب</option>
+        <option>هشتم الف</option>
+      </select>
+    </label>
+    <label class="text-sm">
+      درس
+      <select class="mt-1 w-full rounded-xl bg-lilac p-2 dark:bg-night">
+        <option>ریاضی</option>
+        <option>فارسی</option>
+        <option>علوم</option>
+      </select>
+    </label>
+    <label class="text-sm">
+      آزمون
+      <select class="mt-1 w-full rounded-xl bg-lilac p-2 dark:bg-night">
+        <option>میان‌ترم</option>
+        <option>پایان‌ترم</option>
+        <option>مستمر</option>
+      </select>
+    </label>
+  </section>
+
+  <!-- جدول ثبت نمرات -->
+  <section class="rounded-2xl bg-white p-5 shadow-sm dark:bg-ink">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-right opacity-70">
+            <th class="py-2">ردیف</th>
+            <th class="py-2">نام دانش‌آموز</th>
+            <th class="py-2">نمره (از ۲۰)</th>
+            <th class="py-2">توضیحات</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">۱</td>
+            <td>سارا محمدی</td>
+            <td><input type="number" min="0" max="20" step="0.25" value="19.5" class="w-24 rounded-lg bg-lilac p-2 dark:bg-night"></td>
+            <td><input type="text" placeholder="اختیاری" class="w-full rounded-lg bg-lilac p-2 dark:bg-night"></td>
+          </tr>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">۲</td>
+            <td>امیرحسین کریمی</td>
+            <td><input type="number" min="0" max="20" step="0.25" value="9.5" class="w-24 rounded-lg bg-lilac p-2 dark:bg-night"></td>
+            <td><input type="text" placeholder="اختیاری" class="w-full rounded-lg bg-lilac p-2 dark:bg-night"></td>
+          </tr>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">۳</td>
+            <td>مهسا احمدی</td>
+            <td><input type="number" min="0" max="20" step="0.25" value="14" class="w-24 rounded-lg bg-lilac p-2 dark:bg-night"></td>
+            <td><input type="text" placeholder="اختیاری" class="w-full rounded-lg bg-lilac p-2 dark:bg-night"></td>
+          </tr>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">۴</td>
+            <td>پارسا نوری</td>
+            <td><input type="number" min="0" max="20" step="0.25" value="11.75" class="w-24 rounded-lg bg-lilac p-2 dark:bg-night"></td>
+            <td><input type="text" placeholder="اختیاری" class="w-full rounded-lg bg-lilac p-2 dark:bg-night"></td>
+          </tr>
+          <tr class="border-t border-mist dark:border-white/10">
+            <td class="py-3">۵</td>
+            <td>دیبا صادقی</td>
+            <td><input type="number" min="0" max="20" step="0.25" value="16.5" class="w-24 rounded-lg bg-lilac p-2 dark:bg-night"></td>
+            <td><input type="text" placeholder="اختیاری" class="w-full rounded-lg bg-lilac p-2 dark:bg-night"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-5 flex justify-start">
+      <button type="button" class="rounded-xl bg-royal px-6 py-2 text-white">ذخیره نمرات</button>
+    </div>
+  </section>
+
+</main>
+        
+     
+      <!-- ===== پایان محتوا ===== -->
+
+    </div>
+  </div>
+
+</body>
+</html>
